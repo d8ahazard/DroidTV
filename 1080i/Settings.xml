@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="image">
+		<width>1920</width>
+		<height>1080</height>
+		<texture>settingsbackground.png</texture>
+		</control>
+		<control type="group">
+			<left>100</left>
+			<top>336</top>
+			<height>4000</height>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="225" />
+				<effect type="fade" start="0" end="100" time="225" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="225" />
+				<effect type="fade" start="100" end="0" time="225" />
+			</animation>
+
+			<animation effect="slide" end="0,0" time="150" condition="Control.HasFocus(9000)">Conditional</animation>
+			<animation effect="slide" end="0,-400" time="150" condition="Control.HasFocus(9001)">Conditional</animation>
+			<animation effect="slide" end="0,-800" time="150" condition="Control.HasFocus(9002)">Conditional</animation>
+
+			<orientation>vertical</orientation>
+
+			<control type="image">
+				<left>1589</left>
+				<top>-279</top>
+				<width>115</width>
+				<height>115</height>
+				<aspectratio>keep</aspectratio>
+				<texture>ic_settings_settings.png</texture>
+				
+			</control>
+			
+			<!-- "System" Settings group -->
+			<control type="label">
+				<include>VisibleFadeEffect</include>
+				<label>System</label>
+				<visible>Control.HasFocus(9000)</visible>
+				<font>card_condensed_40</font>
+				<top>-60</top>
+			</control>
+			<control type="fixedlist" id="9000">
+				<ondown>9001</ondown>
+				<top>0</top>
+				<include>SettingsRows</include>
+				<content>
+					<item id="1">
+						<label>480</label>
+						<label2>31400</label2>
+						<onclick>ActivateWindow(AppearanceSettings)</onclick>
+						<icon>settings/ic_settings_display.png</icon>
+					</item>
+
+					<item id="2">
+						<label>14036</label>
+						<label2>31410</label2>
+						<onclick>ActivateWindow(ServiceSettings)</onclick>
+						<icon>settings/ic_settings_services.png</icon>
+					</item>
+					<item id="3">
+						<label>13000</label>
+						<label2>31406</label2>
+						<onclick>ActivateWindow(SystemSettings)</onclick>
+						<icon>settings/ic_settings_system.png</icon>
+					</item>
+				</content>
+			</control>
+			
+			<control type="label">
+				<include>VisibleFadeEffect</include>
+				<label>Sections</label>
+				<visible>Control.HasFocus(9001)</visible>
+				<font>card_condensed_40</font>
+				<top>340</top>
+			</control>
+			
+			<!-- "Sections" Settings group -->
+			<control type="fixedlist" id="9001">
+				<onup>9000</onup>
+				<ondown>9002</ondown>
+				<top>400</top>
+				<include>SettingsRows</include>
+				<content>
+					<item id="1">
+						<label>157</label>
+						<label2>31401</label2>
+						<onclick>ActivateWindow(VideosSettings)</onclick>
+						<icon>settings/ic_settings_video.png</icon>
+					</item>
+					<item id="2">
+						<label>31502</label>
+						<label2>31409</label2>
+						<onclick>ActivateWindow(PVRSettings)</onclick>
+						<icon>settings/ic_settings_tv.png</icon>
+					</item>
+					<item id="3">
+						<label>2</label>
+						<label2>31402</label2>
+						<onclick>ActivateWindow(MusicSettings)</onclick>
+						<icon>settings/ic_settings_music.png</icon>
+					</item>
+					<item id="4">
+						<label>1</label>
+						<label2>31403</label2>
+						<onclick>ActivateWindow(PicturesSettings)</onclick>
+						<icon>settings/ic_settings_pictures.png</icon>
+					</item>
+					<item id="5">
+						<label>8</label>
+						<label2>31404</label2>
+						<onclick>ActivateWindow(WeatherSettings)</onclick>
+						<icon>settings/ic_settings_weather.png</icon>
+					</item>
+					<item id="6">
+						<label>24001</label>
+						<label2>31408</label2>
+						<onclick>ActivateWindow(AddonBrowser)</onclick>
+						<icon>settings/ic_settings_addons.png</icon>
+					</item>
+
+				</content>
+			</control>
+			
+			<control type="label">
+				<include>VisibleFadeEffect</include>
+				<label>Addons</label>
+				<visible>Control.HasFocus(9002)</visible>
+				<font>card_condensed_40</font>
+				<top>740</top>
+			</control>
+			<!-- "Sections" Settings group -->
+			<control type="fixedlist" id="9002">
+				<onup>9001</onup>
+				<ondown>9000</ondown>
+				<top>800</top>
+				<include>SettingsRows</include>
+				<content>
+					<item id="1">
+						<label>Plex</label>
+						<onclick>ActivateWindow(addonsettings,addons://user/plugin.video.plexbmc)</onclick>
+						<icon>settings/ic_settings_cast.png</icon>
+						<visible>System.HasAddon(plugin.video.plexbmc)</visible>
+					</item>
+					<item id="2">
+						<label>Netflix</label>
+						<onclick>ActivateWindow(addonsettings,addons://user/plugin.video.plexbmc)</onclick>
+						<icon>settings/ic_settings_tv.png</icon>
+						<visible>System.HasAddon(plugin.video.netflixbmc)</visible>
+					</item>
+					<item id="3">
+						<label>Play Music</label>
+						<onclick>ActivateWindow(addonsettings,addons://user/plugin.video.plexbmc)</onclick>
+						<icon>settings/ic_settings_tv.png</icon>
+						<visible>System.HasAddon(plugin.video.netflixbmc)</visible>
+					</item>
+					
+
+				</content>
+			</control>
+			
+			
+		</control>
+		
+		
+		
+
+	</controls>
+</window>

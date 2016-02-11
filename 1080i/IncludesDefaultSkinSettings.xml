@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+
+    <include name="defaultskinsettingsValues">
+		
+		<!-- various default settings  -->
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults32)">RunScript(script.skinshortcuts,type=resetall&amp;warning=false)</onload>
+		<onload condition="System.HasAddon(script.artistslideshow)">Skin.SetBool(enableArtistSlideshow)</onload>
+		<onload condition="System.HasAddon(plugin.video.plexbmc)">Skin.SetBool(SmartShortcuts.plex)</onload>
+		<onload condition="System.HasAddon(plugin.video.netflixbmc)">Skin.SetBool(SmartShortcuts.netflix)</onload>
+		<onload condition="System.HasAddon(plugin.video.emby)">Skin.SetBool(SmartShortcuts.emby)</onload>
+	    <onload condition="!Skin.String(extrafanartdelay)">Skin.SetString(extrafanartdelay,6)</onload>
+        <onload condition="!Skin.String(SkinHelper.RandomFanartDelay)">Skin.SetString(SkinHelper.RandomFanartDelay,30)</onload>
+        <onload condition="!Skin.String(SkinHelper.ForcedViews.movies)">Skin.SetString(SkinHelper.ForcedViews.movies,50)</onload>
+		<onload condition="!Skin.String(SkinHelper.ForcedViews.tvshows)">Skin.SetString(SkinHelper.ForcedViews.tvshows,50)</onload>
+		<onload condition="!Skin.String(SkinHelper.ForcedViews.seasons)">Skin.SetString(SkinHelper.ForcedViews.seasons,50)</onload>
+		<onload condition="!Skin.String(SkinHelper.ForcedViews.episodes)">Skin.SetString(SkinHelper.ForcedViews.episodes,50)</onload>
+		<onload condition="!Skin.String(SkinHelper.ForcedViews.sets)">Skin.SetString(SkinHelper.ForcedViews.sets,50)</onload>
+		<onload condition="!Skin.String(SkinHelper.ForcedViews.setmovies)">Skin.SetString(SkinHelper.ForcedViews.setmovies,50)</onload>
+        <onload condition="!Skin.String(SkinHelper.SpinnerTexture)">Skin.SetString(SkinHelper.SpinnerTexture,default)</onload>
+		<onload condition="!Skin.String(SkinHelper.SpinnerTexturePath)">Skin.SetString(SkinHelper.SpinnerTexturePath,special://skin/extras/busy_spinners/default)</onload>
+		<onload condition="!Skin.String(SpinnerTextureColor)">Skin.SetString(SpinnerTextureColor, FF00b8ff)</onload>
+	    
+		<!-- finish default settings -->
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults32)">Skin.SetBool(HomeMenuDefaults32)</onload>
+	
+
+    </include>
+	
+</includes>

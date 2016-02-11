@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>3</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>CommonBackground</include>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<texture>settingsbackground_black.png</texture>
+			<include>VisibleFadeEffect</include>
+		</control>
+		<control type="textbox">
+				<description>header label</description>
+				<left>100</left>
+				<top>500</top>
+				<width>300</width>
+				<height>100</height>
+				<font>font16</font>
+				<wrapmultiline>true</wrapmultiline>
+				<label>$INFO[Control.GetLabel(2)]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+
+		<control type="group">
+			<left>170</left>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="225" />
+				<effect type="fade" start="0" end="100" time="225" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="225" />
+				<effect type="fade" start="100" end="0" time="225" />
+			</animation>
+			<control type="grouplist" id="3">]
+				<description>button area</description>
+				<left>650</left>
+				<top>200</top>
+				<width>260</width>
+				<height>600</height>
+				<itemgap>0</itemgap>
+				<aligny>center</aligny>
+				<onleft>5</onleft>
+				<onright>5</onright>
+				<onup>3</onup>
+				<ondown>20</ondown>
+			</control>
+			
+			<control type="button" id="20">
+				<description>Setting level button</description>
+				<left>650</left>
+				<top>800</top>
+				<height>100</height>
+				<width>260</width>
+				<label>10037</label>
+				<textoffsetx>20</textoffsetx>
+				<textoffsety>28</textoffsety>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>card30</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texture>-</texture>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus>settingsitem_focused.png</texturefocus>
+				<pulseonselect>false</pulseonselect>
+				<onleft>5</onleft>
+				<onright>5</onright>
+				<onup>3</onup>
+				<ondown>3</ondown>
+				<onclick>SettingsLevelChange</onclick>
+			</control>
+			<control type="label">
+				<left>650</left>
+				<top>866</top>
+				<height>25</height>
+				<width>230</width>
+				<label>31142</label>
+				<font>font13_title</font>
+				<textcolor>white</textcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+			</control>
+
+			
+		<control type="image">
+			<left>900</left>
+			<top>0</top>
+			<width>850</width>
+			<height>1080</height>
+			<texture>settingsbackground_right.png</texture>
+			<include>VisibleFadeEffect</include>
+		</control>
+	
+			<control type="grouplist" id="5">
+				<description>control area</description>
+				<left>925</left>
+				<top>200</top>
+				<width>825</width>
+				<height>700</height>
+				<itemgap>-1</itemgap>
+				<onleft>3</onleft>
+				<onright>60</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+			</control>
+			<control type="image">
+				<left>50</left>
+				<top>0</top>
+				<width>200</width>
+				<height>200</height>
+				<texture>$INFO[Control.GetLabel(6),settings/sections/,.png]</texture>
+			</control>
+
+			<control type="textbox" id="6">
+				<description>description area</description>
+				<left>50</left>
+				<top>600</top>
+				<width>600</width>
+				<height>100</height>
+				<font>card28</font>
+				<align>justify</align>
+				<textcolor>white</textcolor>
+				<wrapmultiline>true</wrapmultiline>
+				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+			</control>
+		</control>
+		<include>BehindDialogFadeOut</include>
+		<control type="button" id="10">
+			<description>Default Category Button</description>
+			<height>100</height>
+			<width>260</width>
+			<textoffsetx>20</textoffsetx>
+			<align>right</align>
+			<aligny>center</aligny>
+			<font>card30</font>
+			<textoffsetx>20</textoffsetx>
+			<textcolor>white</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus>settingsitem_focused.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<pulseonselect>false</pulseonselect>
+		</control>
+		<control type="button" id="7">
+			<description>Default Button</description>
+			<left>0</left>
+			<top>0</top>
+			<height>100</height>
+			<font>card30</font>
+			<textoffsetx>20</textoffsetx>
+			<textcolor>white</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<aligny>center</aligny>
+			<invalidcolor>invalid</invalidcolor>
+			<texturefocus>settingsitem_focused.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+		</control>
+		<control type="radiobutton" id="8">
+			<description>Default RadioButton</description>
+			<left>0</left>
+			<top>0</top>
+			<height>100</height>
+			<font>card30</font>
+			<textoffsetx>20</textoffsetx>
+			<aligny>center</aligny>
+			<textcolor>white</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus>settingsitem_focused.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+		</control>
+		<control type="spincontrolex" id="9">
+			<description>Default SpinControlex</description>
+			<left>0</left>
+			<top>0</top>
+			<height>100</height>
+			<font>card30</font>
+			<textoffsetx>20</textoffsetx>
+			<textcolor>white</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus>settingsitem_focused.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<aligny>center</aligny>
+			<reverse>yes</reverse>
+		</control>
+		<control type="sliderex" id="13">
+			<description>Default Slider</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<height>40</height>
+			<font>font13</font>
+			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus>MenuItemFO.png</texturefocus>
+			<texturenofocus>MenuItemNF.png</texturenofocus>
+			<aligny>center</aligny>
+		</control>
+		<control type="label" id="14">
+			<description>Default Label</description>
+			<left>0</left>
+			<top>0</top>
+			<height>30</height>
+			<label>-</label>
+			<align>center</align>
+			<aligny>bottom</aligny>
+			<font>card30</font>
+			<textoffsetx>20</textoffsetx>
+			<textcolor>white</textcolor>
+			
+		</control>
+		<control type="label" id="2">
+			<description>Fake Label so we can pass it value down to the one below</description>
+			<left>0</left>
+			<top>0</top>
+			<width>0</width>
+			<height>0</height>
+			<font>-</font>
+			<visible>false</visible>
+		</control>
+		
+		
+	</controls>
+</window>

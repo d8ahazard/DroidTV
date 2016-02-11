@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="LeanbackPosterView">
+
+<control type="fixedlist" id="5601">
+					<top>0</top>
+					<include>PosterDimensionsCommon</include>
+					<include>PosterLayoutsCommon</include>
+					<onfocus>Control.Move(50,-1)</onfocus>
+					<onfocus>Control.SetFocus(5602)</onfocus>
+					<ondown>5602</ondown>
+					<onup>5602</onup>
+					<animation effect="slide" start="0,-40" end="0,0" time="200" condition="!StringCompare(Window.Property(AnimateView),true)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-40" time="200" condition="StringCompare(Window.Property(AnimateView),true)">Conditional</animation>
+
+					<content>$INFO[Container(50).Listitem(-1).FolderPath]</content>
+
+				</control>
+
+
+				<control type="fixedlist" id="5602">
+					<top>365</top>
+					<include>PosterDimensionsCommon</include>
+					<include>PosterLayoutsCommon</include>
+					<visible>!Container(50).Scrolling</visible>
+					<onleft>50</onleft>
+					<onright>50</onright>
+					<ondown>5603</ondown>
+					<onup>5601</onup>
+					<onfocus>SetProperty(AnimateView,)</onfocus>
+					<onunfocus>SetProperty(AnimateView,true)</onunfocus>
+					<onclick condition="!Listitem.isFolder">PlayMedia($INFO[Listitem.FileNameAndPath])</onclick>
+					<oninfo condition="!Containter(5602).Listitem(0).Season + !Container(5602).Listitem(0).IsFolder + !IsEmpty(Container(5602).Listitem(0).DBID)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(5602).Listitem(0).Label])</oninfo>
+					<oninfo condition="!Containter(5602).Listitem(0).Season + !Container(5602).Listitem(0).IsFolder + Listitem.DBID">RunScript(script.extendedinfo,info=extendedinfo,DBID=$INFO[Container(5602).Listitem(0).DBID])</oninfo>
+					<oninfo condition="Containter(5602).Listitem(0).Season">RunScript(script.extendedinfo,info=extendedtvinfo,label=$INFO[Container(5602).ListItem(0).Label])</oninfo>
+					<content>$INFO[Container(50).Listitem(0).FolderPath]</content>
+
+
+				</control>
+
+				<control type="fixedlist" id="5603">
+
+					<top>730</top>
+					<include>PosterDimensionsCommon</include>
+					<include>PosterLayoutsCommon</include>
+					<onfocus>Control.Move(50,1)</onfocus>
+					<onfocus>Control.SetFocus(5602)</onfocus>
+					<ondown>5602</ondown>
+					<onup>5602</onup>
+					<visible>true</visible>
+					<onclick condition="Listitem.isFolder">ActivateWindow(10025,$INFO[Container(50).ListitemAbsolute(3).FolderPath])</onclick>
+					<onclick condition="!Listitem.isFolder">PlayMedia($INFO[Listitem.FileNameAndPath])</onclick>
+
+					<animation effect="slide" start="0,40" end="0,0" time="200" condition="!StringCompare(Window.Property(AnimateView),true)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,40" time="200" condition="StringCompare(Window.Property(AnimateView),true)">Conditional</animation>
+
+					<content>$INFO[Container(50).Listitem(1).FolderPath]</content>
+				</control>
+				<control type="fixedlist">
+					<top>1095</top>
+					<include>PosterDimensionsCommon</include>
+					<include>PosterLayoutsCommon</include>
+					<visible>true</visible>
+					<onclick condition="Listitem.isFolder">ActivateWindow(10025,$INFO[Container(50).ListitemAbsolute(4).FolderPath])</onclick>
+					<onclick condition="!Listitem.isFolder">PlayMedia($INFO[Listitem.FileNameAndPath])</onclick>
+					<content>$INFO[Container(50).Listitem(2).FolderPath]</content>
+				</control>	
+	</include>
+
+</includes>

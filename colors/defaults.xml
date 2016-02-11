@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colors>
+	<color name="white">FFF1F1F1</color>
+	<color name="grey">FFb4b4b4</color>
+	<color name="grey2">FF999999</color>
+	<color name="grey3">FF505050</color>
+	<color name="darkgrey">FF555555</color>
+	<color name="mediumgrey">FF8a8a8a</color>
+	<color name="black">FF000000</color>
+	<color name="blue">FF0084ff</color>
+	<color name="selected">FFEB9E17</color>
+	<color name="invalid">FFFF0000</color>
+	<color name="matgrey">AAE0E0E0</color>
+	<color name="matmoviesred">FFF03934</color>
+	<color name="moviesprimarydark">FFa52714</color>
+	<color name="mattubered">FFb31217</color>
+	<color name="matplayorange">FFF16c00</color>
+	<color name="matplaygreen">FF7CB342</color>
+	<color name="Material_Teal">FF30c6b4</color>
+	<color name="mattwitchpurple">FF6441a5</color>
+	<color name="matplexgrey">FF484848</color>
+	<color name="netflixred">FFB9090B</color>
+	
+</colors>

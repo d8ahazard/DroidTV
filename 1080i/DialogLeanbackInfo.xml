@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Titan-->
+<window id="1180" type="dialog">
+  <defaultcontrol>2</defaultcontrol>
+  <coordinates>
+    <posX>200</posX>
+    <posY>100</posY>
+  </coordinates>
+  <controls>
+  ...
+  </controls>
+</window>

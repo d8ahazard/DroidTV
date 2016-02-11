@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<allowoverlay>no</allowoverlay>
+	<coordinates>
+		<system>1</system>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<defaultcontrol>365</defaultcontrol>
+	<controls>
+		<!--Main group for globalsearch -->
+		<control type="group" id="100">
+			<include>VisibleFadeEffect</include>
+			<control type="group">
+				<left>0</left>
+				<top>0</top>
+				<animation type="WindowClose" reversible="false">
+					<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="225" />
+					<effect type="fade" start="100" end="0" time="225" />
+				</animation>
+				<control type="image">
+					<include>SearchBackgroundImage</include>
+					<texture background="true">googlewp.png</texture>
+					<visible>true</visible>
+
+				</control>
+
+				<!--This "should" be the fanart image -->
+				<control type="image">
+					<include>SearchBackgroundImage</include>
+					<texture background="true" fallback="background.jpg">$INFO[Container(111).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(111)</visible>
+
+				</control>
+
+				<control type="image">
+					<include>SearchBackgroundImage</include>
+					<texture background="true" fallback="background.jpg">$INFO[Container(121).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(121)</visible>
+
+				</control>
+
+				<control type="image">
+					<include>SearchBackgroundImage</include>
+					<texture background="true" fallback="background.jpg">$INFO[Container(131).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(131)</visible>
+
+				</control>
+
+				<control type="image">
+					<include>SearchBackgroundImage</include>
+					<texture background="true" fallback="background.jpg">$INFO[Container(141).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(141)</visible>
+
+				</control>
+
+				<control type="image">
+					<include>SearchBackgroundImage</include>
+					<texture background="true" fallback="background.jpg">$INFO[Container(151).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(151)</visible>
+
+				</control>
+
+				<control type="image">
+					<include>SearchBackgroundImage</include>
+					<texture background="true" fallback="background.jpg">$INFO[Container(161).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(161)</visible>
+
+				</control>
+
+				<control type="image">
+					<include>SearchBackgroundImage</include>
+					<texture background="true" fallback="background.jpg">$INFO[Container(171).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(171)</visible>
+
+				</control>
+
+				<control type="image">
+					<include>SearchBackgroundImage</include>
+					<texture background="true" fallback="background.jpg">$INFO[Container(181).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(181)</visible>
+
+				</control>
+
+				<control type="image">
+					<include>SearchBackgroundImage</include>
+					<texture background="true" fallback="background.jpg">$INFO[Container(191).ListItem.Property(Fanart)]</texture>
+					<visible>Control.HasFocus(191)</visible>
+
+				</control>
+				<control type="image">
+					<include>SearchBackgroundImage</include>
+					<texture background="true" fallback="backgrounds/youtube.jpg">youtube.png</texture>
+					<visible>Control.HasFocus(361)</visible>
+
+				</control>
+
+				<!--White Background for globalsearch -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>1920</width>
+					<height>1080</height>
+					<texture>Keyboard_Bg.png</texture>
+				</control>
+
+
+
+			</control>
+
+
+			<!--Group of Search results -->
+			<control type="group">
+
+
+				<animation type="WindowClose" reversible="false">
+					<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="225" />
+					<effect type="fade" start="100" end="0" time="225" />
+				</animation>
+
+				<!--Main grouplist -->
+				<control type="grouplist" id="101">
+				
+					<onup>666</onup>
+					<ondown>101</ondown>
+					<orientation>vertical</orientation>
+					<height>1080</height>
+					<usecontrolcoords>true</usecontrolcoords>
+
+
+					<!--Put search graphics/items here -->
+					<control type="group" id="667">
+						<width>1140</width>
+						<height>300</height>
+						<defaultcontrol>666</defaultcontrol>
+
+
+						<control type="button" id="666">
+							<animation effect="zoom" end="110,110" time="100">Focus</animation>
+							<animation effect="zoom" end="100,100" time="100">Unfocus</animation>
+							<colordiffuse>CCFFFFFF</colordiffuse>
+							<description>Global Search</description>
+							<top>40</top>
+							<left>73</left>
+							<height>150</height>
+							<width>150</width>
+							<textwidth>0</textwidth>
+							<textoffsetx>0</textoffsetx>
+							<align>center</align>
+							<aligny>center</aligny>
+							<texturefocus >ic_search_bar_orb.png</texturefocus>
+							<texturenofocus >ic_search_bar_orb.png</texturenofocus>
+							<pulseonselect>true</pulseonselect>
+							<onclick>Dialog.Close(all,false)</onclick>
+							<onclick>RunScript(script.globalsearch)</onclick>
+							
+							<ondown>119</ondown>
+							<onup>360</onup>
+							<ondown condition="!Control.IsVisible(119)">366</ondown>
+
+
+						</control>
+
+						<control type="image">
+							<aspectratio>stretch</aspectratio>
+							<left>393</left>
+							<top>68</top>
+							<width>1140</width>
+							<height>117</height>
+							<texture border="20">KeyboardEditArea.png</texture>
+						</control>
+
+						<!--Searching... label -->
+						<control type="label" id="190">
+							<include>SearchBoxLabel</include>
+							<include>VisibleFadeEffect</include>
+						</control>
+
+						<!--"Search category" label -->
+						<control type="label" id="191">
+							<left>2000</left>
+							<top>68</top>
+							<left>100</left>
+							<top>-5</top>
+							<width>1140</width>
+							<height>117</height>
+							<font>font35</font>
+							<textcolor>darkgrey</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<include>VisibleFadeEffect</include>
+
+						</control>
+						
+						<!--Standard "Search Again" button, hidden b/c we use ours instead-->
+						<control type="button" id="199">
+							<left>2000</left>
+							<top>68</top>
+							<left>100</left>
+							<top>-5</top>
+							<width>1140</width>
+							<height>117</height>
+							<font>font35</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<include>VisibleFadeEffect</include>
+
+						</control>
+
+						<!--Ugly label we don't need, but the script requires-->
+						<control type="label" id="198">
+							<left>2000</left>
+							<include>SearchBoxLabel</include>
+						</control>
+						<!-- Custom "Click to search again" label -->
+						<control type="label" id="420">
+							<include>SearchBoxLabel</include>
+							<label>Click to search again</label>
+							<visible>Control.HasFocus(666)</visible>
+							<include>VisibleFadeEffect</include>
+							<animation effect="fade" start="0" end="70" time="225">Visible</animation>
+							<animation effect="fade" start="70" end="0" time="225">Hidden</animation>
+						</control>
+
+						<!-- Search Item Label -->
+						<control type="label">
+							<include>SearchBoxLabel</include>
+							<label>$INFO[Window.Property(GlobalSearch.SearchString)]</label>
+							<visible>!Control.IsVisible(420) + !Control.IsVisible(190)</visible>
+						</control>
+
+
+
+						<control type="image">
+							<texture>ic_google_logo.png</texture>
+							<width>192</width>
+							<height>68</height>
+							<left>1615</left>
+							<top>90</top>
+						</control>
+					</control>
+
+					<!--Movie Results Group -->
+					<control type="group" id="119">
+						<include>SearchAnimations</include>
+						<width>1920</width>
+						<height>630</height>
+						<defaultcontrol>111</defaultcontrol>
+						<orientation>vertical</orientation>
+
+
+						<control type="label" id="110">
+							<include>SearchLabel_Hidden</include>
+
+						</control>
+						<control type="label">
+							<include>SearchLabel</include>
+							<label>Movies</label>
+						</control>
+
+						<control type="fixedlist" id="111">
+							<include>SearchPosterLayout</include>
+							<onup>667</onup>
+							<ondown>129</ondown>
+							<oninfo condition="!Container(111).Listitem.DBID">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(111).Listitem(0).Label])</oninfo>
+							<oninfo condition="Container(111).Listitem.DBID">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(111).ListItem.DBID])</oninfo>
+							<onclick condition="!Container(111).Listitem.DBID">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(111).Listitem(0).Label])</onclick>
+							<onclick condition="Container(111).Listitem.DBID">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(111).ListItem.DBID])</onclick>
+							
+							<oninfo>Dialog.Close(script-globalsearch-infodialog.xml)</oninfo>
+
+
+						</control>
+
+					</control>
+
+					<!--TV Show Results Group -->
+					<control type="group" id="129">
+						<include>SearchAnimations</include>
+						<width>1920</width>
+						<height>630</height>
+						<defaultcontrol>121</defaultcontrol>
+						<orientation>vertical</orientation>
+
+
+						<control type="label" id="120">
+							<include>SearchLabel_Hidden</include>
+
+						</control>
+						<control type="label">
+							<include>SearchLabel</include>
+							<label>TV Series</label>
+						</control>
+
+						<control type="fixedlist" id="121">
+							<include>SearchPosterLayout</include>
+							<onup>119</onup>
+							<ondown>139</ondown>
+						</control>
+
+					</control>
+
+					<!--TV Seasons Results Group -->
+					<control type="group" id="139">
+						<include>SearchAnimations</include>
+						<width>1920</width>
+						<height>630</height>
+						<defaultcontrol>131</defaultcontrol>
+						<orientation>vertical</orientation>
+
+						<control type="label" id="130">
+							<include>SearchLabel_Hidden</include>
+
+						</control>
+						<control type="label">
+							<include>SearchLabel</include>
+							<label>Seasons</label>
+						</control>
+
+						<control type="fixedlist" id="131">
+							<include>SearchPosterLayout</include>
+							<onup>129</onup>
+							<ondown>149</ondown>
+
+						</control>
+
+					</control>
+
+
+
+					<!--TV Episode Results Group -->
+					<!-- Change this once you fix show layouts on the home screen -->
+
+					<control type="group" id="149">
+						<include>SearchAnimations</include>
+						<width>1920</width>
+						<height>630</height>
+						<defaultcontrol>141</defaultcontrol>
+						<orientation>vertical</orientation>
+
+
+						<control type="label" id="140">
+							<include>SearchLabel_Hidden</include>
+
+						</control>
+						<control type="label">
+							<include>SearchLabel</include>
+							<label>Episodes</label>
+						</control>
+
+						<control type="fixedlist" id="141">
+							<include>SearchPosterLayout</include>
+							<onup>139</onup>
+							<ondown>159</ondown>
+
+						</control>
+
+					</control>
+
+					<!--Music Videos Results Group -->
+
+					<control type="group" id="159">
+						<include>SearchAnimations</include>
+						<width>1920</width>
+						<height>630</height>
+						<defaultcontrol>151</defaultcontrol>
+						<orientation>vertical</orientation>
+
+
+						<control type="label" id="150">
+							<include>SearchLabel_Hidden</include>
+
+						</control>
+						<control type="label">
+							<include>SearchLabel</include>
+							<label>Music Videos</label>
+						</control>
+
+						<control type="fixedlist" id="151">
+							<include>SearchPosterLayout</include>
+							<onup>149</onup>
+							<ondown>159</ondown>
+
+						</control>
+
+					</control>
+
+					<!--Music Artists Results Group -->
+					<!--Create a square layout for this -->
+
+					<control type="group" id="169">
+						<include>SearchAnimations</include>
+						<width>1920</width>
+						<height>630</height>
+						<defaultcontrol>161</defaultcontrol>
+						<orientation>vertical</orientation>
+
+
+						<control type="label" id="160">
+							<include>SearchLabel_Hidden</include>
+
+						</control>
+						<control type="label">
+							<include>SearchLabel</include>
+							<label>Music Videos</label>
+						</control>
+
+						<control type="fixedlist" id="161">
+							<include>SearchPosterLayout</include>
+							<onup>159</onup>
+							<ondown>179</ondown>
+						</control>
+
+					</control>
+
+					<!--Album Results Group -->
+
+					<control type="group" id="179">
+						<include>SearchAnimations</include>
+						<width>1920</width>
+						<height>630</height>
+						<defaultcontrol>171</defaultcontrol>
+						<orientation>vertical</orientation>
+
+
+						<control type="label" id="170">
+							<include>SearchLabel_Hidden</include>
+
+						</control>
+						<control type="label">
+							<include>SearchLabel</include>
+							<label>Albums</label>
+						</control>
+
+						<control type="fixedlist" id="171">
+							<include>SearchPosterLayout</include>
+							<onup>169</onup>
+							<ondown>189</ondown>
+						</control>
+
+					</control>
+
+					<!--Song Results Group -->
+
+					<control type="group" id="189">
+						<include>SearchAnimations</include>
+						<width>1920</width>
+						<height>630</height>
+						<defaultcontrol>181</defaultcontrol>
+						<orientation>vertical</orientation>
+
+
+						<control type="label" id="180">
+							<include>SearchLabel_Hidden</include>
+	
+						</control>
+						<control type="label">
+							<include>SearchLabel</include>
+							<label>Songs</label>
+						</control>
+
+						<control type="fixedlist" id="181">
+							<include>SearchPosterLayout</include>
+							<onup>179</onup>
+							<ondown>199</ondown>
+						</control>
+
+					</control>
+					<control type="group" id="259">
+						<include>SearchAnimations</include>
+						<width>1920</width>
+						<height>630</height>
+						<defaultcontrol>181</defaultcontrol>
+						<orientation>vertical</orientation>
+
+
+						<control type="label" id="250">
+							<include>SearchLabel_Hidden</include>
+	
+						</control>
+						<control type="label">
+							<include>SearchLabel</include>
+							<label>Google Play Music</label>
+						</control>
+
+						<control type="fixedlist" id="251">
+							<include>SearchPosterLayout</include>
+							<onup>181</onup>
+							<ondown>361</ondown>
+							<content>plugin://plugin.audio.googlemusic.exp/?path=search_result&amp;query=$INFO[Window.Property(GlobalSearch.SearchString)]</content>
+							<onclick condition="Listitem.IsFolder">PlayMedia($INFO[ListItem.FolderPath],isdir)</onclick>
+
+						</control>
+
+					</control>
+
+					<control type="group" id="365">
+						<include>SearchAnimations</include>
+						<width>1920</width>
+						<height>630</height>
+						<defaultcontrol>230</defaultcontrol>
+						<orientation>vertical</orientation>
+						<visible>true</visible>
+
+						<control type="label">
+							<top>-15</top>
+							<include>SearchLabel</include>
+							<label>Youtube</label>
+						</control>
+
+						<control type="fixedlist" id="361">
+							<include>SearchWideLayout</include>
+							<content>plugin://script.extendedinfo?info=youtubesearch&amp;&amp;id=$INFO[Window.Property(GlobalSearch.SearchString)]</content>
+							<onup>251</onup>
+							<ondown>666</ondown>
+						</control>
+
+					</control>
+					
+					<control type="group" id="375">
+						<include>SearchAnimations</include>
+						<width>1920</width>
+						<height>630</height>
+						<defaultcontrol>230</defaultcontrol>
+						<orientation>vertical</orientation>
+						<visible>false</visible>
+
+						<control type="label">
+							<top>-15</top>
+							<include>SearchLabel</include>
+							<label>Youtube</label>
+						</control>
+
+						<control type="fixedlist" id="371">
+							<include>SearchWideLayout</include>
+							<content>ActivateWindow(10025,&quot;plugin://plugin.video.plexbmc/?url=https://75.X.X.209:26483/library/sections/1/search?type=1&amp;query=Batman&quot;,return)</content>
+							<onup>189</onup>
+							<ondown>666</ondown>
+							<visible>false</visible>
+						</control>
+
+					</control>
+
+
+				</control>
+
+			</control>
+		</control>
+		<include>BehindDialogFadeOut</include>
+	</controls>
+</window>

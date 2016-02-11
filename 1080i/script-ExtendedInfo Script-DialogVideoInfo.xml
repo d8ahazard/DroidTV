@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">5</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+
+		<control type="group">
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="0,10" end="100,100" center="220,525" easing="in" time="225" />
+				<effect type="slide" start="-100,0" end="0,0" time="225" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100,100" end="0,10" center="440,525" easing="out" time="225" />
+				<effect type="slide" start="0,0" end="-100,0" time="225" />
+			</animation>
+			<animation effect="slide" end="0,-700" time="200" condition="Control.HasFocus(155)">Conditional</animation>
+			<animation effect="slide" end="0,-1200" time="200" condition="Control.HasFocus(855)">Conditional</animation>
+			<animation effect="slide" end="0,-1700" time="200" condition="Control.HasFocus(350)">Conditional</animation>
+			
+			<top>260</top>
+			<left>550</left>
+
+			<control type="image">
+				<width>1125</width>
+				<height>520</height>
+				<texture border="4" colordiffuse="moviesprimarydark">bg_FileMode.png</texture>
+			</control>
+			<control type="group">
+				<left>100</left>
+				<top>30</top>
+				<width>1042</width>
+				<height>854</height>
+
+				<control type="grouplist">
+					<top>0</top>
+					<width>1100</width>
+					<height>110</height>
+					<itemgap>0</itemgap>
+					<align>center</align>
+					<control type="label">
+						<width>1042</width>
+						<height>60</height>
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>label50_condensed</font>
+						<textcolor>white</textcolor>
+						<scroll>true</scroll>
+						<label>$INFO[Window.Property(Title)]</label>
+					</control>
+					<control type="label">
+						<width>1042</width>
+						<height>30</height>
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>font15</font>
+						<textcolor>labelheader</textcolor>
+						<scroll>true</scroll>
+						<label>$INFO[Window.Property(tagline)]</label>
+						<visible>!IsEmpty(Window.Property(tagline))</visible>
+					</control>                   
+				</control>
+				<control type="image">
+					<left>1042</left>
+					<top>0</top>
+					<width>149</width>
+					<height>60</height>
+					<texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/moviedb.png</texture>
+					<aspectratio align="left" aligny="center">keep</aspectratio>                   
+				</control>
+				<control type="grouplist">
+					<left>0</left>
+					<top>95</top>
+					<width>1190</width>
+					<height>90</height>
+					<itemgap>0</itemgap>
+					<align>left</align>
+					<orientation>horizontal</orientation>
+
+					<control type="label">
+						<width>110</width>
+						<height>90</height>
+						<align>left</align>
+						<label>[B]$INFO[Window.Property(year)][/B]</label>
+						<font>card_condensedlight_32</font>
+						<textcolor>white</textcolor>
+					</control>
+
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<width>auto</width>
+						<height>90</height>
+						<align>center</align>
+						<label>[B]$INFO[Window.Property(Duration)][/B]</label>
+						<font>card_condensedlight_32</font>
+						<textcolor>white</textcolor>
+					</control>
+					<control type="label">
+						<top>52</top>
+						<width>70</width>
+						<height>90</height>
+						<left>339</left>
+						<align>right</align>
+						<label>mins</label>
+						<font>card_condensedlight_32</font>
+						<textcolor>white</textcolor>
+					</control>
+					<control type="label">
+						<top>52</top>
+						<width>70</width>
+						<height>90</height>
+						<left>339</left>
+						<align>right</align>
+						<label>$INFO[Window.Property(mpaa)]</label>
+						<font>card_condensedlight_32</font>
+						<textcolor>white</textcolor>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width>120</width>
+						<height>90</height>
+						<align>center</align>
+						<label>[B]$INFO[Window.Property(rating)][/B]</label>
+						<font>card_condensedlight_32</font>
+						<textcolor>white</textcolor>
+					</control>
+					<control type="image">
+
+						<width>198</width>
+						<include>MediaFlagVars</include>
+						<bordersize>2</bordersize>
+						<texture>$INFO[Container(5602).ListItem(0).label,flags/studios/,.png]</texture>
+					</control>
+
+					
+					
+				</control>
+				
+				<control type="textbox" id="800">
+					<description>Plot</description>
+					<left>0</left>
+					<top>150</top>
+					<width>1000</width>
+					<height>180</height>
+					<font>card30</font>
+					<align>left</align>
+					<label fallback="161">$INFO[Window.Property(Plot)]</label>
+					<textcolor>white</textcolor>
+					<pagecontrol>60</pagecontrol>
+					<autoscroll time="3000" delay="6000" repeat="6000">true</autoscroll>
+					<include>SettingsFadeEffect</include>
+					<animation effect="fade" start="100" end="78" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">Conditional</animation>
+					<visible>!StringCompare(Control.GetLabel(5),$LOCALIZE[207])</visible>
+				</control> 
+				
+				<control type="group">
+					<left></left>
+					<top>330</top>
+					<control type="grouplist">
+						<left>0</left>
+						<top>0</top>
+						<width>1000</width>
+						<height>90</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<itemgap>0</itemgap>
+						<orientation>horizontal</orientation>
+						<animation effect="fade" start="0" end="100" time="500" tween="sine" easing="inout">VisibleChange</animation>
+						<visible>true</visible>
+						<control type="image">
+							<width>150</width>
+							<colordiffuse>white</colordiffuse>
+							<include>MediaFlagVars</include>
+							<texture>$INFO[Window.Property(VideoResolution),flags/resolution/,.png]</texture>
+							<visible>!IsEmpty(Window.Property(VideoResolution))</visible>
+						</control>
+						<control type="image">
+							<width>150</width>
+							<colordiffuse>white</colordiffuse>
+							<include>MediaFlagVars</include>
+							<texture>$INFO[Window.Property(AudioChannels),flags/channels/,.png]</texture>
+							<visible>!IsEmpty(Window.Property(AudioChannels))</visible>
+						</control>
+						<control type="image">
+							<width>150</width>
+							<colordiffuse>white</colordiffuse>
+							<include>MediaFlagVars</include>
+							<visible>!IsEmpty(Window.Property(VideoAspect))</visible>
+							<texture>$INFO[Window.Property(VideoAspect),flags/aspectratio/,.png]</texture>
+						</control>
+						<control type="image">
+							<width>150</width>
+							<colordiffuse>white</colordiffuse>
+							<include>MediaFlagVars</include>
+							<texture>flags/cc.png</texture>
+							<visible>!IsEmpty(Window.Property(SubtitleLanguage))</visible>
+						</control>
+					</control>
+
+				</control>
+				
+				<control type="grouplist" id="9000">
+					<left>1</left>
+					<top>425</top>
+					<width>1000</width>
+					<height>100</height>
+					<itemgap>0</itemgap>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>300</onup>
+					<align>center</align>
+					<usecontrolcoords>true</usecontrolcoords>
+					<ondown condition="Control.IsVisible(800)">60</ondown>
+					<ondown condition="!Control.IsVisible(800)">9001</ondown>
+					<orientation>horizontal</orientation>
+					
+					<control type="button" id="8">
+						
+						<description>Play</description>
+						<top>-20</top>
+						<left>70</left>
+						<include>CommonButtonCommons2</include>
+						<onclick>RunScript(script.leanbackhelper)</onclick>
+						<onfocus>RunScript(Script.leanbackhelper)</onfocus>
+						<label>Play</label>
+						<enable>!IsEmpty(Window.Property(DBID))</enable>
+						<ondown>155</ondown>
+					</control>
+					
+					<control type="togglebutton" id="5">
+						<top>100</top>
+						<include>CommonButtonCommons2</include>
+						<label>More</label>
+						<ondown>155</ondown>
+					</control>
+					<control type="radiobutton" id="445">
+						<include>CommonButtonCommons2</include>
+						<label>Extras</label>
+						<ondown>155</ondown>
+					</control>
+				</control>
+
+				
+			</control>
+							
+		</control>
+		
+		<control type="group">
+			<animation effect="slide" end="0,-700" time="200" condition="Control.HasFocus(155)">Conditional</animation>
+			<animation effect="slide" end="0,-1200" time="200" condition="Control.HasFocus(855)">Conditional</animation>
+			<animation effect="slide" end="0,-1700" time="200" condition="Control.HasFocus(350)">Conditional</animation>
+			
+			<control type="label" id="997">
+				<label>Similar Movies</label>
+				<top>990</top>
+				<left>40</left>
+				
+				<include>CardLabel</include>
+				
+			</control>
+			
+			<control type="fixedlist" id="155">
+				<onup>8</onup>
+				<ondown>855</ondown>
+				<top>1050</top>
+				<width>2200</width>
+				<height>1080</height>
+				<include>PosterLayoutsCommon</include>
+				<include>PosterDimensionsCommon</include>
+				<animation effect="zoom" end="110" time="200">Focus</animation>
+				<content>plugin://script.skin.helper.service/?action=similarmovies&imdbid=$INFO[Window.Property(imdb_id)]&limit=20</content>
+			</control>
+			
+			<control type="label" id="997">
+				<label>More by $INFO[Window.Property(director)]</label>
+				<top>1490</top>
+				<left>40</left>
+				
+				<include>CardLabel</include>
+				
+			</control>
+			
+
+			<control type="fixedlist" id="855">
+				<onup>155</onup>
+				<ondown>350</ondown>
+				<top>1550</top>
+				<width>2200</width>
+				<height>1080</height>
+				<include>PosterLayoutsCommon</include>
+				<include>PosterDimensionsCommon</include>
+				<content>plugin://script.extendedinfo?info=directormovies&amp;&amp;director=$INFO[Window.Property(director)]</content>
+				<animation effect="zoom" end="110" time="200">Focus</animation>
+			</control>
+			<control type="fixedlist" id="350">
+				<onup>855</onup>
+				<top>2050</top>
+				<width>2200</width>
+				<height>1080</height>
+				<include>PosterLayoutsCommon</include>
+				<include>PosterDimensionsCommon</include>
+				<animation effect="zoom" end="110" time="200">Focus</animation>
+			</control>
+			
+			
+		</control>
+		
+
+		<control type="group">
+			<top>337</top>
+			<left>98</left>
+			<animation type="WindowOpen" reversible="false" condition="!Window.IsVisible(home)">
+				<effect type="zoom" start="100" end="150" easing="in" time="225" />
+				<effect type="slide" start="0,0" end="90,-55" time="225" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="140" end="101" easing="out" time="225" />
+				<effect type="slide" start="90,-55" end="0,0" time="225" />
+			</animation>
+
+			<animation type="WindowOpen" reversible="false" condition="Window.IsVisible(home)">
+				<effect type="zoom" start="100" end="150" easing="in" time="225" />
+				<effect type="slide" start="-1000,0" end="90,-55" time="225" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="140" end="101" easing="out" time="225" />
+				<effect type="slide" start="90,-55" end="0,0" time="225" />
+			</animation>
+
+			<animation effect="slide" end="0,-700" time="200" condition="Control.HasFocus(155)">Conditional</animation>
+			<animation effect="slide" end="0,-1200" time="200" condition="Control.HasFocus(855)">Conditional</animation>
+			<animation effect="slide" end="0,-1700" time="200" condition="Control.HasFocus(350)">Conditional</animation>
+			
+
+			<control type="image">
+				<width>235</width>
+				<height>350</height>
+				<align>center</align>
+				<aligny>top</aligny>
+				<visible>true</visible>
+				<aspectratio>scale</aspectratio>
+				<texture diffuse="Mask_test.png">$INFO[Window.Property(Poster)]</texture>
+			</control>
+			<control type="image">
+				<width>240</width>
+				<height>350</height>
+				<align>center</align>
+				<aligny>top</aligny>
+				<visible>true</visible>
+				<aspectratio>scale</aspectratio>
+				<texture diffuse="Mask_test.png">$INFO[Window.Property(set.thumb)]</texture>
+				<animation effect="fade" start="0" end="100" time="500" tween="sine" easing="inout">VisibleChange</animation>
+				<visible>IntegerGreaterThan(Container(250).NumItems,0) + ControlGroup(9000).HasFocus(208) + !IsEmpty(Window.Property(Set)) + !IsEmpty(Window.Property(set.thumb))</visible>
+			</control>
+		</control>
+
+
+	</controls>
+</window>

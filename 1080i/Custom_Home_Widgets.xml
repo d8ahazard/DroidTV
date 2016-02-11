@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1105">
+	<defaultcontrol always="true">200</defaultcontrol>
+	<onunload>ClearProperty(SubMenu,Home)</onunload>
+	<controls>
+		<!-- Background -->
+		<include>DialogTextBackgroundImage</include>
+		<control type="group">
+			<animation reversible="true" type="WindowOpen">
+				<effect center="auto" easing="inout" end="100" start="92" time="120" tween="sine" type="zoom" />
+				<effect easing="inout" end="100" start="0" time="120" tween="sine" type="fade" />
+			</animation>
+			<animation reversible="true" type="WindowClose">
+				<effect center="auto" easing="inout" end="92" start="100" time="120" tween="sine" type="zoom" />
+				<effect easing="inout" end="0" start="100" time="120" tween="sine" type="fade" />
+			</animation>
+			<!-- Main group -->
+			<control type="group">
+				<include>DialogZoomAnimation</include>
+				<left>0</left>
+				<centertop>50%</centertop>
+				<width>1920</width>
+				<height>832</height>
+				<control type="image">
+					<width>1740</width>
+					<height>832</height>
+					<texture border="1,61,1,1">dialogs/file_manager_back.png</texture>
+				</control>
+				<!-- Widget type -->
+				<control type="label">
+					<left>40</left>
+					<top>14</top>
+					<height>30</height>
+					<width>270</width>
+					<aligny>center</aligny>
+					<font>Bold30</font>
+					<label>View</label>
+					<textcolor>ffdadada</textcolor>
+				</control>
+				<!-- Widget name -->
+				<control type="label">
+					<left>240</left>
+					<top>14</top>
+					<height>30</height>
+					<width>460</width>
+					<aligny>center</aligny>
+					<font>Bold30</font>
+					<label>$LOCALIZE[31024]</label>
+					<textcolor>ffdadada</textcolor>
+				</control>
+				<!-- Widget path -->
+				<control type="label">
+					<left>690</left>
+					<top>14</top>
+					<height>30</height>
+					<width>1010</width>
+					<aligny>center</aligny>
+					<font>Bold30</font>
+					<label>$LOCALIZE[31202]</label>
+					<textcolor>ffdadada</textcolor>
+				</control>
+				<!-- Widget -->
+				<control type="list" id="100">
+					<top>60</top>
+					<width>1740</width>
+					<height>672</height>
+					<scrolltime>0</scrolltime>
+					<onleft>300</onleft>
+					<onright>200</onright>
+					<ondown>1003</ondown>
+					<onup>1003</onup>
+					<itemlayout height="84" width="1740">
+						<control type="image">
+							<width>1740</width>
+							<height>84</height>
+							<texture border="3">settings/button_no_focus.png</texture>
+						</control>
+						<control type="label">
+							<left>40</left>
+							<width>270</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>ff505153</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<left>40</left>
+							<width>270</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>ff505153</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>IsEmpty(ListItem.Label)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="84" width="1740">
+						<control type="image">
+							<width>1740</width>
+							<height>84</height>
+							<texture border="3">settings/button_focus.png</texture>
+						</control>
+						<control type="label">
+							<left>40</left>
+							<width>270</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>white</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>Control.HasFocus(100)</visible>
+						</control>
+						<control type="label">
+							<left>40</left>
+							<width>270</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>ff505153</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!Control.HasFocus(100)</visible>
+						</control>
+						<control type="label">
+							<left>40</left>
+							<width>270</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>white</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>Control.HasFocus(100) + IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="label">
+							<left>40</left>
+							<width>270</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>ff505153</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>!Control.HasFocus(100) + IsEmpty(ListItem.Label)</visible>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>$INFO[Skin.String(1-WidgetView-1)]</label>
+							<label2>Set ViewType</label2>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(1-WidgetView-1,Wide))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(1-WidgetView-1,Poster))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(1-WidgetView-1,Square))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(1-WidgetView-1,Square Info))</onclick>
+							<include>ClickActions</include>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(1-WidgetView-2)]</label>
+							<label2>Set ViewType</label2>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(1-WidgetView-2,Wide))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(1-WidgetView-2,Poster))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(1-WidgetView-2,Square))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(1-WidgetView-2,Square Info))</onclick>
+							<include>ClickActions</include>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(1-WidgetView-3)]</label>
+							<label2>Set ViewType</label2>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(1-WidgetView-3,Wide))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(1-WidgetView-3,Poster))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(1-WidgetView-3,Square))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(1-WidgetView-3,Square Info))</onclick>
+							<include>ClickActions</include>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(1-WidgetView-4)]</label>
+							<label2>Set ViewType</label2>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(1-WidgetView-4,Wide))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(1-WidgetView-4,Poster))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(1-WidgetView-4,Square))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(1-WidgetView-4,Square Info))</onclick>
+							<include>ClickActions</include>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(1-WidgetView-5)]</label>
+							<label2>Set ViewType</label2>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(1-WidgetView-5,Wide))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(1-WidgetView-5,Poster))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(1-WidgetView-5,Square))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(1-WidgetView-5,Square Info))</onclick>
+							<include>ClickActions</include>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(1-WidgetView-6)]</label>
+							<label2>Set ViewType</label2>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(1-WidgetView-6,Wide))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(1-WidgetView-6,Poster))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(1-WidgetView-6,Square))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(1-WidgetView-6,Square Info))</onclick>
+							<include>ClickActions</include>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(1-WidgetView-7)]</label>
+							<label2>Set ViewType</label2>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(1-WidgetView-7,Wide))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(1-WidgetView-7,Poster))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(1-WidgetView-7,Square))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(1-WidgetView-7,Square Info))</onclick>
+							<include>ClickActions</include>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(1-WidgetView-8)]</label>
+							<label2>Set ViewType</label2>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(1-WidgetView-8,Wide))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(1-WidgetView-8,Poster))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(1-WidgetView-8,Square))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(1-WidgetView-8,Square Info))</onclick>
+							<include>ClickActions</include>
+						</item>
+					</content>
+				</control>
+				<!-- Widget label -->
+				<control type="list" id="200">
+					<top>60</top>
+					<onleft>100</onleft>
+					<onright>300</onright>
+					<ondown>1003</ondown>
+					<onup>1003</onup>
+					<width>1740</width>
+					<height>672</height>
+					<scrolltime>0</scrolltime>
+					<itemlayout height="84" width="1740">
+						<control type="label">
+							<left>240</left>
+							<width>440</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>ff505153</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="label">
+							<left>240</left>
+							<width>440</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>ff505153</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>IsEmpty(ListItem.Label)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="84" width="1740">
+						<control type="label">
+							<left>240</left>
+							<width>440</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>white</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>Control.HasFocus(200) + !IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="label">
+							<left>240</left>
+							<width>440</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>ff505153</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!Control.HasFocus(200) + !IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="label">
+							<left>240</left>
+							<width>440</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>white</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>Control.HasFocus(200) + IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="label">
+							<left>240</left>
+							<width>440</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>ff505153</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>!Control.HasFocus(200) + IsEmpty(ListItem.Label)</visible>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>$VAR[WidgetLabel-1]</label>
+							<label2>31200</label2>
+							<onclick>Skin.SetString($INFO[Window(home).Property(SubMenu),,-WidgetLabel-1])</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetLabel-2]</label>
+							<label2>31200</label2>
+							<onclick>Skin.SetString($INFO[Window(home).Property(SubMenu),,-WidgetLabel-2])</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetLabel-3]</label>
+							<label2>31200</label2>
+							<onclick>Skin.SetString($INFO[Window(home).Property(SubMenu),,-WidgetLabel-3])</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetLabel-4]</label>
+							<label2>31200</label2>
+							<onclick>Skin.SetString($INFO[Window(home).Property(SubMenu),,-WidgetLabel-4])</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetLabel-5]</label>
+							<label2>31200</label2>
+							<onclick>Skin.SetString($INFO[Window(home).Property(SubMenu),,-WidgetLabel-5])</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetLabel-6]</label>
+							<label2>31200</label2>
+							<onclick>Skin.SetString($INFO[Window(home).Property(SubMenu),,-WidgetLabel-6])</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetLabel-7]</label>
+							<label2>31200</label2>
+							<onclick>Skin.SetString($INFO[Window(home).Property(SubMenu),,-WidgetLabel-7])</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetLabel-8]</label>
+							<label2>31200</label2>
+							<onclick>Skin.SetString($INFO[Window(home).Property(SubMenu),,-WidgetLabel-8])</onclick>
+						</item>
+					</content>
+				</control>
+				<!-- Widget path -->
+				<control type="list" id="300">
+					<onleft>200</onleft>
+					<onright>100</onright>
+					<ondown>1003</ondown>
+					<onup>1003</onup>
+					<top>60</top>
+					<width>1740</width>
+					<height>672</height>
+					<scrolltime>0</scrolltime>
+					<itemlayout height="84" width="1740">
+						<control type="label">
+							<left>690</left>
+							<width>1010</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>ff505153</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="label">
+							<left>690</left>
+							<width>1010</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>ff505153</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>IsEmpty(ListItem.Label)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="84" width="1690">
+						<control type="label">
+							<left>690</left>
+							<width>1010</width>
+							<height>84</height>
+							<font>Light32</font>
+							<scroll>true</scroll>
+							<textcolor>white</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>Control.HasFocus(300) + !IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="label">
+							<left>690</left>
+							<width>1010</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>ff505153</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!Control.HasFocus(300) + !IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="label">
+							<left>690</left>
+							<width>1010</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>white</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>Control.HasFocus(300) + IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="label">
+							<left>690</left>
+							<width>1010</width>
+							<height>84</height>
+							<font>Light32</font>
+							<textcolor>ff505153</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>!Control.HasFocus(300) + IsEmpty(ListItem.Label)</visible>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>$VAR[WidgetAction-1]</label>
+							<label2>31201</label2>
+							<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;showNone=True&amp;skinLabel=$INFO[Window(home).Property(SubMenu)]-WidgetLabel-1&amp;skinAction=$INFO[Window(home).Property(SubMenu)]-WidgetAction-1&amp;skinList=$INFO[Window(home).Property(SubMenu)]-WidgetList-1&amp;skinType=$INFO[Window(home).Property(SubMenu)]-WidgetType-1)</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetAction-2]</label>
+							<label2>31201</label2>
+							<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;showNone=True&amp;skinLabel=$INFO[Window(home).Property(SubMenu)]-WidgetLabel-2&amp;skinAction=$INFO[Window(home).Property(SubMenu)]-WidgetAction-2&amp;skinList=$INFO[Window(home).Property(SubMenu)]-WidgetList-2&amp;skinType=$INFO[Window(home).Property(SubMenu)]-WidgetType-2)</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetAction-3]</label>
+							<label2>31201</label2>
+							<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;showNone=True&amp;skinLabel=$INFO[Window(home).Property(SubMenu)]-WidgetLabel-3&amp;skinAction=$INFO[Window(home).Property(SubMenu)]-WidgetAction-3&amp;skinList=$INFO[Window(home).Property(SubMenu)]-WidgetList-3&amp;skinType=$INFO[Window(home).Property(SubMenu)]-WidgetType-3)</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetAction-4]</label>
+							<label2>31201</label2>
+							<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;showNone=True&amp;skinLabel=$INFO[Window(home).Property(SubMenu)]-WidgetLabel-4&amp;skinAction=$INFO[Window(home).Property(SubMenu)]-WidgetAction-4&amp;skinList=$INFO[Window(home).Property(SubMenu)]-WidgetList-4&amp;skinType=$INFO[Window(home).Property(SubMenu)]-WidgetType-4)</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetAction-5]</label>
+							<label2>31201</label2>
+							<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;showNone=True&amp;skinLabel=$INFO[Window(home).Property(SubMenu)]-WidgetLabel-5&amp;skinAction=$INFO[Window(home).Property(SubMenu)]-WidgetAction-5&amp;skinList=$INFO[Window(home).Property(SubMenu)]-WidgetList-5&amp;skinType=$INFO[Window(home).Property(SubMenu)]-WidgetType-5)</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetAction-6]</label>
+							<label2>31201</label2>
+							<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;showNone=True&amp;skinLabel=$INFO[Window(home).Property(SubMenu)]-WidgetLabel-6&amp;skinAction=$INFO[Window(home).Property(SubMenu)]-WidgetAction-6&amp;skinList=$INFO[Window(home).Property(SubMenu)]-WidgetList-6&amp;skinType=$INFO[Window(home).Property(SubMenu)]-WidgetType-6)</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetAction-7]</label>
+							<label2>31201</label2>
+							<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;showNone=True&amp;skinLabel=$INFO[Window(home).Property(SubMenu)]-WidgetLabel-7&amp;skinAction=$INFO[Window(home).Property(SubMenu)]-WidgetAction-7&amp;skinList=$INFO[Window(home).Property(SubMenu)]-WidgetList-7&amp;skinType=$INFO[Window(home).Property(SubMenu)]-WidgetType-7)</onclick>
+						</item>
+						<item>
+							<label>$VAR[WidgetAction-8]</label>
+							<label2>31201</label2>
+							<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;showNone=True&amp;skinLabel=$INFO[Window(home).Property(SubMenu)]-WidgetLabel-8&amp;skinAction=$INFO[Window(home).Property(SubMenu)]-WidgetAction-8&amp;skinList=$INFO[Window(home).Property(SubMenu)]-WidgetList-8&amp;skinType=$INFO[Window(home).Property(SubMenu)]-WidgetType-8)</onclick>
+						</item>
+					</content>
+				</control>
+				<!-- Button grouplist -->
+				<control type="grouplist" id="9001">
+					<left>0</left>
+					<bottom>12</bottom>
+					<width>1920</width>
+					<height>76</height>
+					<itemgap>0</itemgap>
+					<onleft>noop</onleft>
+					<onright>noop</onright>
+					<onup>300</onup>
+					<ondown>300</ondown>
+					<align>center</align>
+					<orientation>horizontal</orientation>
+					<!-- OK Button -->
+					<control type="button" id="1003">
+						<width>320</width>
+						<height>76</height>
+						<align>center</align>
+						<aligny>top</aligny>
+						<font>Med24</font>
+						<textoffsetx>23</textoffsetx>
+						<textoffsety>27</textoffsety>
+						<label>186</label>
+						<onclick>Close</onclick>
+					</control>
+					<!-- Reset Button -->
+					<control type="button" id="1002">
+						<width>320</width>
+						<height>76</height>
+						<align>center</align>
+						<aligny>top</aligny>
+						<font>Med24</font>
+						<textoffsetx>23</textoffsetx>
+						<textoffsety>27</textoffsety>
+						<label>10035</label>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetLabel-1])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetLabel-2])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetLabel-3])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetLabel-4])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetLabel-5])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetLabel-6])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetLabel-7])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetLabel-8])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetAction-1])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetAction-2])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetAction-3])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetAction-4])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetAction-5])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetAction-6])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetAction-7])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetAction-8])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetList-1])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetList-2])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetList-3])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetList-4])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetList-5])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetList-6])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetList-7])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetList-8])</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(SubMenu),,-WidgetView])</onclick>
+					</control>
+					
+				</control>
+				
+			</control>
+		</control>
+	</controls>
+</window>

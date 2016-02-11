@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="CommonRootView">
+
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<visible>Window.IsVisible(10025)</visible>
+			<texture>bg_movies.png</texture>
+		</control>
+
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<aspectratio>scale</aspectratio>
+			<visible>true</visible>
+			<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+			<include>backgroundfade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<include>Window_OpenClose_Animation</include>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<aspectratio>scale</aspectratio>
+			<visible>true</visible>
+			<texture background="true">$INFO[Container(5601).ListItem(0).Art(fanart)]</texture>
+			<include>backgroundfade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<include>Window_OpenClose_Animation</include>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>-100</top>
+			<width>2200</width>
+			<height>1180</height>
+			<texture>homenowplayingback.png</texture>
+		</control>
+
+		<control type="group">
+			<visible>Container(50).ListItem.IsFolder</visible>
+
+			<!-- Right Groups -->
+
+			<control type="group">
+				<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
+				<include>VisibleFadeEffect</include>
+
+				<control type="group">
+					<visible>ListItem.IsFolder</visible>
+					<width>2000</width>
+					<height>7600</height>
+					<top>760</top>
+					<left>550</left>
+
+
+
+					<animation effect="slide" end="0,0" time="150" condition="StringCompare(Container(50).CurrentItem,1)">Conditional</animation>
+					<animation effect="slide" end="0,-400" time="150" condition="StringCompare(Container(50).CurrentItem,2)">Conditional</animation>
+					<animation effect="slide" end="0,-800" time="150" condition="StringCompare(Container(50).CurrentItem,3)">Conditional</animation>
+					<animation effect="slide" end="0,-1200" time="150" condition="StringCompare(Container(50).CurrentItem,4)">Conditional</animation>
+					<animation effect="slide" end="0,-1600" time="150" condition="StringCompare(Container(50).CurrentItem,5)">Conditional</animation>
+					<animation effect="slide" end="0,-2000" time="150" condition="StringCompare(Container(50).CurrentItem,6)">Conditional</animation>
+					<animation effect="slide" end="0,-2400" time="150" condition="StringCompare(Container(50).CurrentItem,7)">Conditional</animation>
+					<animation effect="slide" end="0,-2800" time="150" condition="StringCompare(Container(50).CurrentItem,8)">Conditional</animation>
+					<animation effect="slide" end="0,-3200" time="150" condition="StringCompare(Container(50).CurrentItem,9)">Conditional</animation>
+					<animation effect="slide" end="0,-3600" time="150" condition="StringCompare(Container(50).CurrentItem,10)">Conditional</animation>
+					<animation effect="slide" end="0,-4000" time="150" condition="StringCompare(Container(50).CurrentItem,11)">Conditional</animation>
+					<animation effect="slide" end="0,-4400" time="150" condition="StringCompare(Container(50).CurrentItem,12)">Conditional</animation>
+					<animation effect="slide" end="0,-4800" time="150" condition="StringCompare(Container(50).CurrentItem,13)">Conditional</animation>
+					<animation effect="slide" end="0,-5200" time="150" condition="StringCompare(Container(50).CurrentItem,14)">Conditional</animation>
+					<animation effect="slide" end="0,-5600" time="150" condition="StringCompare(Container(50).CurrentItem,15)">Conditional</animation>
+					<animation effect="slide" end="0,-6000" time="150" condition="StringCompare(Container(50).CurrentItem,16)">Conditional</animation>
+					<animation effect="slide" end="0,-6400" time="150" condition="StringCompare(Container(50).CurrentItem,17)">Conditional</animation>
+					<animation effect="slide" end="0,-6800" time="150" condition="StringCompare(Container(50).CurrentItem,18)">Conditional</animation>
+					<animation effect="slide" end="0,-7200" time="150" condition="StringCompare(Container(50).CurrentItem,19)">Conditional</animation>
+					<animation effect="slide" end="0,-7600" time="150" condition="StringCompare(Container(50).CurrentItem,20)">Conditional</animation>
+
+					<animation type="Focus">
+						<effect type="slide" start="0,0" end="-475,0" time="200"/>
+						<effect type="zoom" start="100,100" end="110,110" time="200"/>
+					</animation>
+
+					<animation type="Unfocus">
+						<effect type="slide" start="-475,0" end="0,0" time="200"/>
+						<effect type="zoom" end="100,100" start="110,110" time="200"/>
+					</animation>
+
+					<control type="button" id="98">
+						<onfocus condition="StringCompare(Container(50).CurrentItem,1)">Control.SetFocus(5600)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,2)">Control.SetFocus(5601)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,3)">Control.SetFocus(5602)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,4)">Control.SetFocus(5603)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,5)">Control.SetFocus(5604)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,6)">Control.SetFocus(5605)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,7)">Control.SetFocus(5606)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,8)">Control.SetFocus(5607)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,9)">Control.SetFocus(5608)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,10)">Control.SetFocus(5609)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,11)">Control.SetFocus(5610)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,12)">Control.SetFocus(5611)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,13)">Control.SetFocus(5612)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,14)">Control.SetFocus(5613)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,15)">Control.SetFocus(5614)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,16)">Control.SetFocus(5615)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,17)">Control.SetFocus(5616)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,18)">Control.SetFocus(5617)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,19)">Control.SetFocus(5618)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,20)">Control.SetFocus(5619)</onfocus>
+						<texture>-</texture>
+						<texturenofocus>-</texturenofocus>
+						<texturefocus>-</texturefocus>
+
+					</control>
+
+
+					<control type="fixedlist" id="5600">
+						<top>-400</top>
+						<include>PosterDimensionsCommon</include>
+						<include>PosterLayoutsCommon</include>
+						<ondown>5601</ondown>
+						<onup>5500</onup>
+						<onleft>50</onleft>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,2) + !StringCompare(Container(50).CurrentItem,1)">Control.Move(50,-1)</onfocus>
+						<visible>true</visible>
+						<onclick condition="!Listitem.isFolder">PlayMedia($INFO[Listitem.FileNameAndPath])</onclick>
+						<onclick>Control.SetFocus(50)</onclick>
+						<onclick>Action(select)</onclick>
+						<onclick>Control.SetFocus(50,)</onclick>
+
+						<!-- Oninfo commands -->
+						<oninfo condition="!Container(5600).Listitem(0).IsFolder + !Container(5600).Listitem.DBID">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(5600).Listitem(0).Label])</oninfo>
+						<oninfo condition="!Container(5600).Listitem(0).IsFolder + Container(5600).Listitem.DBID">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5600).ListItem.DBID])</oninfo>
+
+						<animation effect="slide" end="0,-40" time="200" condition="Control.HasFocus(5600)">Conditional</animation>
+
+						<content>$INFO[Container(50).ListitemAbsolute(0).FolderPath]</content>
+
+
+					</control>
+					<!--Item 2 Group -->
+					<control type="fixedlist" id="5601">
+						<top>0</top>
+						<include>PosterDimensionsCommon</include>
+						<include>PosterLayoutsCommon</include>
+
+						<onup>5600</onup>
+						<ondown>5602</ondown>
+
+						<content>$INFO[Container(50).ListitemAbsolute(1).FolderPath]</content>
+
+						<!-- Onfocus commands -->
+						<onfocus condition="StringCompare(Container(50).CurrentItem,1)">Control.Move(50,1)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,3)">Control.Move(50,-1)</onfocus>
+
+						<!-- Onclick commands -->
+						<onclick condition="!Listitem.isFolder">PlayMedia($INFO[Listitem.FileNameAndPath])</onclick>
+						<onclick>Control.SetFocus(50)</onclick>
+						<onclick>Action(select)</onclick>
+						<onclick>Control.SetFocus(50,)</onclick>
+
+						<!-- Oninfo commands -->
+						<oninfo condition="!Container(5601).Listitem(0).IsFolder + !Container(5601).Listitem.DBID">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(5601).Listitem(0).Label])</oninfo>
+						<oninfo condition="!Container(5601).Listitem(0).IsFolder + Container(5601).Listitem.DBID">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(5601).ListItem.DBID])</oninfo>
+
+						<!-- Focus animations -->
+						<animation effect="slide" end="0,40" time="200" condition="Control.HasFocus(5600)">Conditional</animation>
+						<animation effect="slide" end="0,-40" time="200" condition="Control.HasFocus(5602)">Conditional</animation>
+
+					</control>
+
+					<!--Item 3 Group -->
+					<control type="fixedlist" id="5602">
+						<top>400</top>
+						<include>PosterDimensionsCommon</include>
+						<include>PosterLayoutsCommon</include>
+						<content>$INFO[Container(50).ListitemAbsolute(2).FolderPath]</content>
+
+						<onup>5601</onup>
+						<ondown>5603</ondown>
+
+						<!-- Onfocus commands -->
+						<onfocus condition="StringCompare(Container(50).CurrentItem,2)">Control.Move(50,1)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,4)">Control.Move(50,-1)</onfocus>
+
+						<!-- Onclick commands -->
+						<onclick condition="!Listitem.isFolder">PlayMedia($INFO[Listitem.FileNameAndPath])</onclick>
+						<onclick>Control.SetFocus(50)</onclick>
+						<onclick>Action(select)</onclick>
+						<onclick>Control.SetFocus(50,)</onclick>
+
+						<!-- Oninfo commands -->
+						<oninfo condition="!Container(5602).Listitem(0).IsFolder + !Container(5602).Listitem(0).DBID">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(5602).Listitem(0).Title])</oninfo>
+						<oninfo condition="!Container(5602).Listitem(0).IsFolder + Container(5602).Listitem(0).DBID">RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(5602).Listitem(0).DBID])</oninfo>
+
+						<!-- Focus animations -->
+						<animation effect="slide" end="0,40" time="200" condition="Control.HasFocus(5601)">Conditional</animation>
+						<animation effect="slide" end="0,-40" time="200" condition="Control.HasFocus(5603)">Conditional</animation>
+
+
+					</control>
+
+					<control type="fixedlist" id="5603">
+
+						<top>800</top>
+						<include>PosterDimensionsCommon</include>
+						<include>PosterLayoutsCommon</include>
+						<visible>true</visible>
+
+						<onup>5602</onup>
+						<ondown>5604</ondown>
+
+						<content>$INFO[Container(50).ListitemAbsolute(3).FolderPath]</content>
+
+						<!-- Onfocus commands -->
+						<onfocus condition="StringCompare(Container(50).CurrentItem,3)">Control.Move(50,1)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,5)">Control.Move(50,-1)</onfocus>
+
+						<!-- Onclick commands -->
+						<onclick condition="!Listitem.isFolder">PlayMedia($INFO[Listitem.FileNameAndPath])</onclick>
+						<onclick>Control.SetFocus(50)</onclick>
+						<onclick>Action(select)</onclick>
+						<onclick>Control.SetFocus(50,)</onclick>
+
+						<!-- Oninfo commands -->
+						<oninfo condition="!Container(5603).Listitem(0).IsFolder + !Container(5603).Listitem(0).DBID">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(5603).Listitem(0).Title])</oninfo>
+						<oninfo condition="!Container(5603).Listitem(0).IsFolder + Container(5603).Listitem(0).DBID">RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(5603).Listitem(0).DBID])</oninfo>
+
+						<!-- Focus animations -->
+						<animation effect="slide" end="0,40" time="200" condition="Control.HasFocus(5602)">Conditional</animation>
+						<animation effect="slide" end="0,-40" time="200" condition="Control.HasFocus(5604)">Conditional</animation>
+					</control>
+
+
+					<control type="fixedlist" id="5604">
+						<top>1200</top>
+						<include>PosterDimensionsCommon</include>
+						<include>PosterLayoutsCommon</include>
+						<content>$INFO[Container(50).ListitemAbsolute(4).FolderPath]</content>
+
+						<onup>5603</onup>
+						<ondown>5605</ondown>
+
+						<!-- Onfocus commands -->
+						<onfocus condition="StringCompare(Container(50).CurrentItem,4)">Control.Move(50,1)</onfocus>
+						<onfocus condition="StringCompare(Container(50).CurrentItem,6)">Control.Move(50,-1)</onfocus>
+
+						<!-- Onclick commands -->
+						<onclick condition="!Listitem.isFolder">PlayMedia($INFO[Listitem.FileNameAndPath])</onclick>
+						<onclick>Control.SetFocus(50)</onclick>
+						<onclick>Action(select)</onclick>
+						<onclick>Control.SetFocus(50,)</onclick>
+
+						<!-- Oninfo commands -->
+						<oninfo condition="!Container(5604).Listitem(0).IsFolder + !Container(5604).Listitem(0).DBID">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(5604).Listitem(0).Label])</oninfo>
+						<oninfo condition="!Container(5604).Listitem(0).IsFolder + Container(5604).Listitem(0).DBID">RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(5604).Listitem(0).DBID])</oninfo>
+
+						<!-- Focus animations -->
+						<!-- Focus animations -->
+						<animation effect="slide" end="0,40" time="200" condition="Control.HasFocus(5603)">Conditional</animation>
+						<animation effect="slide" end="0,-40" time="200" condition="Control.HasFocus(5605)">Conditional</animation>
+					</control>
+				</control>
+
+				<control type="image">
+					<left>-50</left>
+					<top>-100</top>
+					<width>2200</width>
+					<height>600</height>
+
+					<texture flipy="true">homenowplayingback.png</texture>
+				</control>
+
+				<control type="image">
+					<left>-50</left>
+					<top>680</top>
+					<width>2200</width>
+					<height>600</height>
+
+					<texture>homenowplayingback.png</texture>
+				</control>
+
+
+
+
+			</control>
+
+
+			<!-- Left Panel Group -->
+			<control type="group">
+				<visible>Control.IsVisible(50) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
+				<include>VisibleFadeEffect</include>
+
+
+				<control type="group" id="10">
+
+					<width>540</width>
+					<height>1080</height>
+					<visible>!Control.IsVisible(5699)</visible>
+					<animation effect="slide" time="200" start="-475,0" end="0,0">Focus</animation>
+					<animation effect="slide" time="200" start="0,0" end="-475,0">Unfocus</animation>
+
+					<control type="image">
+						<animation effect="slide" time="200" start="0,0" end="-475,0" condition="!ListItem.IsFolder">Conditional</animation>
+						<animation effect="slide" time="200" start="-475,0" end="0,0" condition="ListItem.IsFolder">Conditional</animation>
+
+						<left>0</left>
+						<texture colordiffuse="$VAR[WindowThemeColor]" condition="Window.IsActive(videos)">bg_FileMode.png</texture>
+						<top>0</top>
+
+					</control>
+
+					<control type="fixedlist" id="50">
+						<visible>true</visible>
+						<left>113</left>
+						<top>50</top>
+						<width>500</width>
+						<height>1080</height>
+						<onright>98</onright>
+						<focusposition>3</focusposition>
+						<pagecontrol>60</pagecontrol>
+						<scrolltime>200</scrolltime>
+						<include>CommonLayout</include>
+						<onleft condition="Control.IsVisible(5000)">5000</onleft>
+						<onright condition="Control.IsVisible(5000)">5000</onright>
+
+
+					</control>
+
+
+					<control type="image">
+						<left>504</left>
+						<width>36></width>
+						<height>1080</height>
+						<texture colordiffuse="$VAR[WindowThemeColor]" condition="Window.IsActive(videos)">fg_FileMode.png</texture>
+						<top>0</top>
+
+					</control>
+
+				</control>
+
+			</control>
+
+			<control type="image">
+				<left>1600</left>
+				<top>0</top>
+				<width>200</width>
+				<height>209</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$VAR[PluginLogo]</texture>
+				<visible>StringCompare(Container(50).CurrentItem,1)</visible>
+				<animation effect="slide" start="0,-200" end="0,0" time="150">Visible</animation>
+				<animation effect="slide" end="0,-200" start="0,0" time="150">Hidden</animation>
+			</control>
+		</control>
+
+
+		<control type="group">
+				<visible>!Container(50).ListItem.IsFolder</visible>
+			<control type="panel" id="5000">
+				<left>100</left>
+				<visible>!Container(50).ListItem.IsFolder</visible>
+				<width>1880</width>
+				<height>1080</height>
+				<onleft>50</onleft>
+				<onback>50</onback>
+				<include>PosterLayoutsCommon</include>
+				<content>$INFO[Container(50).FolderPath]</content>
+			</control>
+
+		</control>
+		<!-- Search Group -->
+		<control type="group">
+			<animation effect="slide" end="0,-300" time="150" condition="!StringCompare(Container(50).CurrentItem,1)">Conditional</animation>
+			<top>100</top>
+			<left>100</left>
+
+			<control type="image">
+				<width>100</width>
+				<height>100</height>
+				<texture colordiffuse="mattubered">circle-512.png</texture>
+
+			</control>
+
+
+			<control type="button" id="5500">
+				<top>25</top>
+				<left>25</left>
+				<width>50</width>
+				<height>50</height>
+				<ondown>5600</ondown>
+				<onclick>RunScript(script.globalsearch)</onclick>
+				<texture>lb_ic_in_app_search.png</texture>
+				<texturenofocus>lb_ic_in_app_search.png</texturenofocus>
+				<animation effect="zoom" time="200" end="110,110">Focus</animation>
+			</control>
+		</control>
+
+		<!-- Debug Labels -->
+		<control type="group">
+			<visible>Skin.HasSetting(DebugInfo)</visible>
+
+			<control type="label">
+
+				<left>20</left>
+				<top>300</top>
+				<width>180</width>
+				<height>100</height>
+				<font>card22</font>
+				<textcolor>white</textcolor>
+				<align>Left</align>'
+				<visible>!StringCompare(Window.Property(AnimateView),true)</visible>
+				<aligny>Top</aligny>
+				<wrapmultiline>true</wrapmultiline>
+				<label>$INFO[Container(5601).Listitem(0).Label]</label>
+
+			</control>
+			<control type="label">
+				<left>20</left>
+				<top>450</top>
+				<width>980</width>
+				<height>100</height>
+				<font>card22</font>
+				<textcolor>white</textcolor>
+				<align>Left</align>
+				<aligny>Top</aligny>
+				<wrapmultiline>true</wrapmultiline>
+				<visible>true</visible>
+				<label>$INFO[Container.Listitem.DBID]</label>
+
+			</control>
+
+			<control type="label" id="3000">
+				<left>20</left>
+				<top>500</top>
+				<width>180</width>
+				<height>100</height>
+				<font>card22</font>
+				<textcolor>white</textcolor>
+				<align>Left</align>
+				<aligny>Top</aligny>
+				<wrapmultiline>true</wrapmultiline>
+				<visible>true</visible>
+				<label>$INFO[Container(5601).ListItem.DBID]</label>
+
+			</control>
+		</control>
+	</include>
+
+
+</includes>

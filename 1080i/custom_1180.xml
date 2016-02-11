@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1180" >
+	<!-- movieinformation -->
+	<defaultcontrol always="true">8</defaultcontrol>
+	<animation effect="fade" end="100" start="100" time="200">WindowClose</animation>
+	<controls>
+	<control type="label">
+					<left>20</left>
+					<top>300</top>
+					<width>180</width>
+					<height>100</height>
+					<font>card22</font>
+					<textcolor>white</textcolor>
+					<align>Left</align>
+					<aligny>Top</aligny>
+					<wrapmultiline>true</wrapmultiline>
+					<label>$INFO[Container(5601).Listitem(0).Label]</label>
+					
+			</control>
+			<control type="label">
+					<left>20</left>
+					<top>350</top>
+					<width>180</width>
+					<height>100</height>
+					<font>card22</font>
+					<textcolor>white</textcolor>
+					<align>Left</align>
+					<aligny>Top</aligny>
+					<wrapmultiline>true</wrapmultiline>
+					<label>$INFO[Container(5601).Listitem(0).Director]</label>
+					
+			</control>
+			<control type="label">
+					<left>20</left>
+					<top>400</top>
+					<width>180</width>
+					<height>100</height>
+					<font>card22</font>
+					<textcolor>white</textcolor>
+					<align>Left</align>
+					<aligny>Top</aligny>
+					<wrapmultiline>true</wrapmultiline>
+					<label>$INFO[Container(5601).Listitem(0).Art(fanart)]</label>
+					
+			</control>
+	</controls>
+</window>

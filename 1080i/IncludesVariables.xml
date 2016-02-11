@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<includes>
+
+	<variable name="ScrollLabel">
+		<value condition="Control(50).OnNext">Next</value>
+		<value condition="Control(50).OnPrevious">Previous</value>
+	</variable>
+
+	<variable name="LayoutWidth">
+		<value condition="Container(9001).Listitem.Season">416</value>
+		<value condition="!Container(9001).Listitem.Season">260</value>
+
+	</variable>
+
+	<variable name="WindowThemeColor">
+		<value condition="Window.IsActive(10025) + StringCompare(Container.PluginName,plugin.video.twitch)">mattwitchpurple</value>
+		<value condition="Window.IsActive(10025) + StringCompare(Container.PluginName,plugin.video.plexbmc)">matplexgrey</value>
+		<value condition="Window.IsActive(10025) + StringCompare(Container.PluginName,plugin.video.youtube)">mattubered</value>
+		<value condition="Window.IsActive(10025) + StringCompare(Container.PluginName,plugin.video.netflixbmc)">netflixred</value>
+		<value condition="Window.IsActive(10025)">moviesprimarydark</value>
+		<value condition="Window.IsActive(music)">matplayorange</value>
+		<value condition="Window.IsActive(10502)">matplayorange</value>
+		<value condition="Window.IsActive(programs)">matplaygreen</value>
+
+	</variable>
+
+	<variable name="WindowTransitionColor">
+		<value condition="Window.Next(10025) + StringCompare(Container.PluginName,plugin.video.twitch)">mattwitchpurple</value>
+		<value condition="Window.Next(10025) + StringCompare(Container.PluginName,plugin.video.plexbmc)">matplexgrey</value>
+		<value condition="Window.Next(10025) + StringCompare(Container.PluginName,plugin.video.youtube)">mattubered</value>
+		<value condition="Window.Next + StringCompare(Container.PluginName,plugin.video.netflixbmc)">netflixred</value>
+		<value condition="Window.IsActive(10025)">moviesprimarydark</value>
+		<value condition="Window.IsActive(music)">matplayorange</value>
+		<value condition="Window.IsActive(10502)">matplayorange</value>
+		<value condition="Window.IsActive(programs)">matplaygreen</value>
+
+	</variable>
+
+	<variable name="PluginLogo">
+		<value condition="Window.IsActive(10025) + StringCompare(Container.PluginName,plugin.video.twitch)">logos/twitch.png</value>
+		<value condition="Window.IsActive(10025) + StringCompare(Container.PluginName,plugin.video.plexbmc)">logos/plex.png</value>
+		<value condition="Window.IsActive(10025) + StringCompare(Container.PluginName,plugin.video.youtube)">logos/youtube.png</value>
+		<value condition="Window.IsActive(10025) + StringCompare(Container.PluginName,plugin.video.netflixbmc)">logos/netflix.png</value>
+		<value condition="Window.IsActive(music) + StringCompare(Container.PluginName,plugin.audio.googlemusic.exp)">logos/playmusic.png</value>
+
+
+	</variable>
+
+	<variable name="SeasonEpisodeLabel">
+		<value condition="!IsEmpty(ListItem.Episode) + IntegerGreaterThan(ListItem.Episode,9) + IntegerGreaterThan(ListItem.Season,9)">[UPPERCASE]S$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
+		<value condition="!IsEmpty(ListItem.Episode) + IntegerGreaterThan(ListItem.Episode,9)">[UPPERCASE]S0$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
+		<value condition="!IsEmpty(ListItem.Episode) + IntegerGreaterThan(ListItem.Season,9)">[CR][UPPERCASE]S$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
+		<value condition="!IsEmpty(ListItem.Episode)">[UPPERCASE]S0$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
+	</variable>
+
+</includes>
